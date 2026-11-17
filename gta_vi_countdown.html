@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09080d">
+<title>GRAND THEFT AUTO VI — Countdown</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+:root{--pink:#ff4f9a;--gold:#ffc66b;--ink:#09080d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:#fff;font-family:'DM Sans',sans-serif;overflow-x:hidden}
+.hero{min-height:100vh;position:relative;display:flex;flex-direction:column;isolation:isolate;background:linear-gradient(180deg,rgba(8,7,12,.22),rgba(8,7,12,.58) 48%,#09080d 100%),url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=2200&q=90') center/cover}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 38%,transparent 5%,rgba(8,7,12,.24) 65%,#09080d 100%)}
+nav{height:82px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,6vw,90px);border-bottom:1px solid #ffffff20;backdrop-filter:blur(8px)}
+.brand{font:900 22px 'Barlow Condensed';letter-spacing:2px}.brand span{color:var(--pink)}
+nav a{color:#fff;text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-left:28px;opacity:.8}nav a:hover{color:var(--pink);opacity:1}
+main{width:min(1100px,90%);margin:auto;text-align:center;padding:70px 0 90px}
+.eyebrow{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:#ffd4e5;margin-bottom:24px}
+.logo{position:relative;display:inline-block;margin:0 auto 20px;filter:drop-shadow(0 8px 22px #0009);transform:rotate(-2deg)}
+.logo .grand{display:block;font:800 clamp(38px,7vw,82px)/.78 'Barlow Condensed';letter-spacing:5px;text-shadow:4px 5px 0 #171018,-2px -2px 0 #171018,2px -2px 0 #171018,-2px 2px 0 #171018}
+.logo .theft{display:block;font:900 clamp(64px,12vw,142px)/.83 'Barlow Condensed';letter-spacing:-2px;color:#fff;text-shadow:5px 6px 0 #171018,-3px -3px 0 #171018,3px -3px 0 #171018,-3px 3px 0 #171018}
+.logo .auto{display:block;font:900 clamp(54px,10vw,116px)/.82 'Barlow Condensed';letter-spacing:5px;color:#fff;text-shadow:5px 6px 0 #171018,-3px -3px 0 #171018,3px -3px 0 #171018,-3px 3px 0 #171018}
+.logo .vi{position:absolute;right:-18%;bottom:2%;font:900 clamp(60px,11vw,130px)/.8 'Barlow Condensed';letter-spacing:-7px;background:linear-gradient(140deg,#ffe6a6,#ff8dbe 48%,#b3a3ff);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(4px 5px 0 #241224)}
+.subtitle{max-width:590px;margin:30px auto 36px;color:#e8dfe7;font-size:14px;line-height:1.8}
+.count-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#ffb4d1;margin-bottom:18px}
+.countdown{display:flex;justify-content:center;gap:clamp(8px,2vw,20px);flex-wrap:wrap}
+.unit{width:clamp(70px,14vw,120px);padding:19px 8px 15px;background:linear-gradient(145deg,#ffffff18,#ffffff08);border:1px solid #ffffff35;border-radius:12px;box-shadow:0 14px 40px #0005;backdrop-filter:blur(12px)}
+.num{font:800 clamp(34px,6vw,56px)/1 'Barlow Condensed';font-variant-numeric:tabular-nums;letter-spacing:1px}
+.unit small{display:block;margin-top:9px;font-size:9px;letter-spacing:2px;color:#f4bfd4}
+.release{margin-top:22px;color:#d6c8d2;font-size:11px;letter-spacing:2px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:36px;padding:15px 24px;border:1px solid #ff9fc7;border-radius:3px;color:#fff;text-decoration:none;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:.25s;background:#ff4f9a22}
+.cta:hover{background:var(--pink);transform:translateY(-3px);box-shadow:0 10px 35px #ff4f9a55}
+section{padding:90px clamp(20px,8vw,120px);background:#09080d}
+.section-tag{font-size:10px;letter-spacing:4px;color:var(--pink);text-transform:uppercase}
+h2{font:800 clamp(34px,6vw,58px)/.95 'Barlow Condensed';text-transform:uppercase;margin:14px 0 38px;letter-spacing:1px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{min-height:190px;padding:25px;border:1px solid #ffffff20;border-radius:8px;background:linear-gradient(145deg,#1d1722,#100e15);position:relative;overflow:hidden}
+.card:after{content:"";position:absolute;width:140px;height:140px;right:-45px;bottom:-60px;border-radius:50%;background:#ff4f9a20;filter:blur(5px)}
+.card .icon{font-size:23px}.card h3{font:700 23px 'Barlow Condensed';letter-spacing:1px;margin:18px 0 8px}.card p{font-size:12px;line-height:1.7;color:#b9aeb9;margin:0}
+footer{padding:28px 20px;text-align:center;border-top:1px solid #ffffff18;color:#827782;font-size:10px;line-height:1.8;letter-spacing:.5px}
+footer strong{color:#cfc3ce}
+@media(max-width:700px){nav{height:68px}nav .links{display:none}main{padding:75px 0}.cards{grid-template-columns:1fr}section{padding-top:65px;padding-bottom:65px}.subtitle{font-size:13px}}
+</style>
+</head>
+<body>
+<div class="hero">
+<nav><div class="brand">VICE CITY <span>///</span> COUNTDOWN</div><div class="links"><a href="#countdown">Countdown</a><a href="#details">The experience</a><a href="https://www.rockstargames.com/VI" target="_blank" rel="noreferrer">Official site ↗</a></div></nav>
+<main id="countdown">
+<div class="eyebrow">The next chapter is almost here</div>
+<div class="logo" aria-label="Grand Theft Auto VI"><span class="grand">GRAND</span><span class="theft">THEFT</span><span class="auto">AUTO</span><span class="vi">VI</span></div>
+<p class="subtitle">Welcome back to the neon-soaked streets. The wait is on — keep an eye on the clock.</p>
+<div class="count-label">Time until launch</div>
+<div class="countdown">
+<div class="unit"><div class="num" id="days">000</div><small>DAYS</small></div>
+<div class="unit"><div class="num" id="hours">00</div><small>HOURS</small></div>
+<div class="unit"><div class="num" id="minutes">00</div><small>MINUTES</small></div>
+<div class="unit"><div class="num" id="seconds">00</div><small>SECONDS</small></div>
+</div>
+<div class="release">NOVEMBER 19, 2026 <span style="color:var(--pink)">•</span> CONSOLE LAUNCH</div>
+<a class="cta" href="https://www.rockstargames.com/VI" target="_blank" rel="noreferrer">Explore GTA VI <span>↗</span></a>
+</main>
+</div>
+<section id="details">
+<div class="section-tag">Leonida is calling</div>
+<h2>More than a countdown.</h2>
+<div class="cards">
+<article class="card"><div class="icon">🌴</div><h3>VICE CITY VIBES</h3><p>Sun-soaked streets, neon nights, and a whole new world waiting beyond the horizon.</p></article>
+<article class="card"><div class="icon">⏳</div><h3>EVERY SECOND COUNTS</h3><p>A live timer that updates every second, right here in your browser.</p></article>
+<article class="card"><div class="icon">⚡</div><h3>THE NEXT ERA</h3><p>Keep the official Rockstar page close for the latest confirmed news and updates.</p></article>
+</div>
+</section>
+<footer><strong>FAN-MADE COUNTDOWN</strong> · Not affiliated with or endorsed by Rockstar Games.<br>Grand Theft Auto and related marks are trademarks of their respective owners. Release date shown is based on the announced date and may change.</footer>
+<script>
+const launch = new Date('2026-11-19T00:00:00-05:00').getTime();
+const pad = (n, width=2) => String(n).padStart(width,'0');
+function update(){
+  let diff = launch - Date.now();
+  if(diff <= 0){
+    document.querySelector('.count-label').textContent = 'THE WAIT IS OVER';
+    diff = 0;
+  }
+  const d=Math.floor(diff/86400000);
+  const h=Math.floor(diff%86400000/3600000);
+  const m=Math.floor(diff%3600000/60000);
+  const s=Math.floor(diff%60000/1000);
+  document.getElementById('days').textContent=pad(d,3);
+  document.getElementById('hours').textContent=pad(h);
+  document.getElementById('minutes').textContent=pad(m);
+  document.getElementById('seconds').textContent=pad(s);
+}
+update();setInterval(update,1000);
+</script>
+</body></html>
